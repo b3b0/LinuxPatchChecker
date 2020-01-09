@@ -14,6 +14,7 @@ if len(sys.argv) < 5:
     sys.exit(1)
 
 os.system("clear")
+
 username = sys.argv[3]
 command = sys.argv[4]
 port = sys.argv[2]
@@ -33,7 +34,7 @@ def machine(hostname,username,password,command,port):
         client.load_system_host_keys()
         client.set_missing_host_key_policy(paramiko.WarningPolicy)
         client.connect(hostname, port=port, username=username, password=password)
-        stdin, stdout = client.exec_command(command)
+        stdin, stdout, stderr = client.exec_command(command)
         print(stdout.read())
         print("----------------------")
     except gaierror:
@@ -46,7 +47,15 @@ def machine(hostname,username,password,command,port):
         print("Unable to verify server's host key")
     finally:
         client.close()
+def brag():
+    print("""
 
+###########################################################
+## LinuxPatchChecker 1.0.4 - https://www.github.com/b3b0 ##
+###########################################################
+
+""")
+brag()
 if isThisGroup == True:
     with open(fullGroupPath, "r") as f:
         password = getpass.getpass()
@@ -58,4 +67,4 @@ if isThisGroup == True:
 
 else:
     password = getpass.getpass()
-    machine(groupServsarg,username,password,command,port)    
+    machine(groupServsarg,username,password,command,port)
