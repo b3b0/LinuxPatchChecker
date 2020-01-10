@@ -30,7 +30,4 @@ Can be used for anything really though!
 ## Run any command against one or many servers!
 ![command](https://i.imgur.com/MMWFDXv.png)
 # To Do
-- Attach gif of how it works
-- attach sample servers list 
-- ability to have multiple hostnames
-- grepping for number of updates available with a switch
+- ability to have multiple hostnames if not using a .srvs file
