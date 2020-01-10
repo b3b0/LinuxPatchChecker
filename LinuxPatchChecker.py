@@ -19,7 +19,6 @@ os.system("clear")
 username = sys.argv[3]
 command = sys.argv[4]
 port = sys.argv[2]
-#trust = sys.argv[5]
 groupServsarg = sys.argv[1]
 groupQuery = "/" + groupServsarg + ".srvs"
 thisPath = (os.getcwd())
@@ -56,7 +55,7 @@ def machine(hostname,username,password,command,port):
 def brag():
     print("""
 ###########################################################
-## LinuxPatchChecker 1.1.3 - https://www.github.com/b3b0 ##
+## LinuxPatchChecker 1.1.4 - https://www.github.com/b3b0 ##
 ###########################################################
 """)
 brag()
