@@ -54,7 +54,7 @@ def machine(hostname,username,password,command,port):
 def brag():
     print("""
 ###########################################################
-## LinuxPatchChecker 1.0.4 - https://www.github.com/b3b0 ##
+## LinuxPatchChecker 1.1.2 - https://www.github.com/b3b0 ##
 ###########################################################
 """)
 brag()
