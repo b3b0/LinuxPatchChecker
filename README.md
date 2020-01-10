@@ -1,8 +1,21 @@
 # LinuxPatchChecker
 Can be used for anything really though!
-
 `python LinuxPatchChecker.py [hostname/IP/group.srvs] port username command` 
+
 # Things you can do
+In the following examples, I demonstrate how this tool can be used.
+
+To run a command against one server, use the following syntax:
+`python LinuxPatchChecker.py hostname port username command` 
+
+To run a command against a LIST of servers, use the following syntax:
+`python LinuxPatchChecker.py [name of .srvs file in the same directory as LinuxPatchChecker.py] port username command`
+
+I'm running `patchcount` against the servers in this file:
+![Example host list .srvs file](https://i.imgur.com/6aK6vod.png)
+
+In this example:
+![patchcount](https://i.imgur.com/KONUTXi.png)
 
 ## Get counts of updates available with `patchcount`
 ![patchcount](https://i.imgur.com/KONUTXi.png)
