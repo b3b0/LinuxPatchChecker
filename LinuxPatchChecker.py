@@ -27,8 +27,10 @@ fullGroupPath = (thisPath + groupQuery)
 isThisGroup = os.path.exists(fullGroupPath)
 
 def machine(hostname,username,password,command,port):
-    if command == "patchcheck":
+    if command == "patchcount":
         command = '[ -f /etc/centos-release ] && { OUTPUT="$(yum check-update | grep updates | grep -v updates: | wc -l)"; echo "There are ${OUTPUT} updates available"; uptime;} && [ -f /etc/lsb_release ] && { /usr/lib/update-notifier/apt-check --human-readable; uptime;}'
+    if command == "patches":
+        command = '[ -f /etc/centos-release ] && { yum check-update; } && [ -f /etc/lsb_release ] && { apt list --upgradeable; }'   
     print("- - - - - - - - - - - - - - -")
     print("----------------------")
     print(hostname)
