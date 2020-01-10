@@ -1,7 +1,10 @@
 # LinuxPatchChecker
 Can be used for anything really though!
+
 `python LinuxPatchChecker.py [hostname/IP/group.srvs] port username command` 
+
 ---
+
 # How To Use
 - To run a command against one server, use the following syntax:
 
@@ -15,7 +18,9 @@ Can be used for anything really though!
 
 ![Example host list .srvs file](https://i.imgur.com/6aK6vod.png)
 ![patchcount](https://i.imgur.com/KONUTXi.png)
+
 ---
+
 ## Get counts of updates available with `patchcount`
 ![patchcount](https://i.imgur.com/KONUTXi.png)
 
