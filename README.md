@@ -1,6 +1,8 @@
 # LinuxPatchChecker
 Can be used for anything really though!
 
+`python LinuxPatchChecker.py [hostname/IP/group.srvs] port username command` 
+
 # To Do
 - Attach gif of how it works
 - attach sample servers list 
