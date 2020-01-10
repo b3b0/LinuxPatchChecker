@@ -3,7 +3,7 @@ Can be used for anything really though!
 
 `python LinuxPatchChecker.py [hostname/IP/group.srvs] port username command` 
 
-![Example 1](https://imgur.com/a/SkcuHdv)
+![Example 1](https://i.imgur.com/KONUTXi.png)
 
 # To Do
 - Attach gif of how it works
