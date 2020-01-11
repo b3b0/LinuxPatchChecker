@@ -27,9 +27,9 @@ isThisGroup = os.path.exists(fullGroupPath)
 
 def machine(hostname,username,password,command,port):
     if command == "patchcount":
-        command = '[ -f /etc/centos-release ] && { OUTPUT="$(yum check-update | grep updates | grep -v updates: | wc -l)"; echo "There are ${OUTPUT} updates available"; uptime;} && [ -f /etc/lsb_release ] && { /usr/lib/update-notifier/apt-check --human-readable; uptime;}'
+        command = '[ -f /etc/centos-release ] && { OUTPUT="$(yum check-update | grep updates | grep -v updates: | wc -l)"; echo "There are ${OUTPUT} updates available"; uptime;} || [ -f /etc/lsb-release ] && { /usr/lib/update-notifier/apt-check --human-readable; uptime;}'
     if command == "patches":
-        command = '[ -f /etc/centos-release ] && { yum check-update; } && [ -f /etc/lsb_release ] && { apt list --upgradeable; }'   
+        command = '[ -f /etc/centos-release ] && { yum check-update; } || [ -f /etc/lsb-release ] && { apt list --upgradeable; }'   
     print("- - - - - - - - - - - - - - -")
     print("----------------------")
     print(hostname)
@@ -55,7 +55,7 @@ def machine(hostname,username,password,command,port):
 def brag():
     print("""
 ###########################################################
-## LinuxPatchChecker 1.1.4 - https://www.github.com/b3b0 ##
+## LinuxPatchChecker 1.1.5 - https://www.github.com/b3b0 ##
 ###########################################################
 """)
 brag()
