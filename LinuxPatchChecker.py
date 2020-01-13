@@ -3,7 +3,7 @@
 # LinuxPatchChecker - it does other stuff too!
 # https://www.github.com/b3b0/LinuxPatchChecker
 
-import sys, paramiko
+import sys, paramiko, os
 from paramiko import SSHClient, AuthenticationException, SSHException, BadHostKeyException
 from paramiko.buffered_pipe import PipeTimeout as PipeTimeout
 import getpass
