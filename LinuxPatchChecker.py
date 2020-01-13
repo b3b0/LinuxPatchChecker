@@ -3,7 +3,7 @@
 # LinuxPatchChecker - it does other stuff too!
 # https://www.github.com/b3b0/LinuxPatchChecker
 
-import sys, paramiko, os
+import sys, paramiko
 from paramiko import SSHClient, AuthenticationException, SSHException, BadHostKeyException
 from paramiko.buffered_pipe import PipeTimeout as PipeTimeout
 import getpass
@@ -13,8 +13,6 @@ if len(sys.argv) < 5:
     print("Arguments missing.")
     print("Please do the following: '$ python LinuxPatchChecker.py hostname/group port username command'")
     sys.exit(1)
-
-os.system("clear")
 
 username = sys.argv[3]
 command = sys.argv[4]
@@ -55,7 +53,7 @@ def machine(hostname,username,password,command,port):
 def brag():
     print("""
 ###########################################################
-## LinuxPatchChecker 1.1.5 - https://www.github.com/b3b0 ##
+## LinuxPatchChecker 1.1.6 - https://www.github.com/b3b0 ##
 ###########################################################
 """)
 brag()
