@@ -4,6 +4,11 @@ Can be used for anything really though!
 `python LinuxPatchChecker.py [hostname/IP/group.srvs] port username command` 
 
 ---
+# Requires
+- Python 2.7 or 3.x
+- `pip install paramiko`
+- `pip3 install paramiko`
+- key-based or password-based access to the servers you want to use the tool against
 
 # How To Use
 - To run a command against one server, use the following syntax:
