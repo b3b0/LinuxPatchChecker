@@ -14,6 +14,8 @@ if len(sys.argv) < 5:
     print("Please do the following: '$ python LinuxPatchChecker.py hostname/group port username command'")
     sys.exit(1)
 
+os.system("clear")
+
 username = sys.argv[3]
 command = sys.argv[4]
 port = sys.argv[2]
@@ -25,9 +27,9 @@ isThisGroup = os.path.exists(fullGroupPath)
 
 def machine(hostname,username,password,command,port):
     if command == "patchcount":
-        command = '[ -f /etc/centos-release ] && { OUTPUT="$(yum check-update | grep updates | grep -v updates: | wc -l)"; echo "There are ${OUTPUT} updates available"; uptime;} || [ -f /etc/lsb-release ] && { /usr/lib/update-notifier/apt-check --human-readable; uptime;}'
+        command = '[ -f /etc/centos-release ] && { OUTPUT="$(yum check-update | grep updates | grep -v updates: | wc -l)"; echo "There are ${OUTPUT} updates available"; uptime;} && [ -f /etc/lsb_release ] && { /usr/lib/update-notifier/apt-check --human-readable; uptime;} && [ -f /usr/bin/lsb_release ] && { apt-get update -y && apt-get upgrade -s | grep upgraded | grep -v following; uptime;}'
     if command == "patches":
-        command = '[ -f /etc/centos-release ] && { yum check-update; } || [ -f /etc/lsb-release ] && { apt list --upgradeable; }'   
+        command = '[ -f /etc/centos-release ] && { yum check-update; } && [ -f /etc/lsb_release ] && { apt list --upgradeable; } && [ -f /usr/bin/lsb_release ] && { apt list --upgradeable; }'   
     print("- - - - - - - - - - - - - - -")
     print("----------------------")
     print(hostname)
@@ -53,7 +55,7 @@ def machine(hostname,username,password,command,port):
 def brag():
     print("""
 ###########################################################
-## LinuxPatchChecker 1.1.6 - https://www.github.com/b3b0 ##
+## LinuxPatchChecker 1.1.7 - https://www.github.com/b3b0 ##
 ###########################################################
 """)
 brag()
